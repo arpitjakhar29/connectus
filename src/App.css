@@ -1,0 +1,462 @@
+* {
+  margin: 0px;
+  padding: 0%;
+  overflow-x: hidden;
+}
+
+.appcontainer {
+  display: flex;
+}
+.content {
+  width: 100%;
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes grow {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Container Styling with Page Load Animation */
+.createpost {
+  border: 1px solid #eceff1;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 15px;
+  margin: 5% auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  animation: fadeInUp 1s ease-in-out; /* Page load animation */
+}
+
+.createpost::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #ff6f61, #ff8e72, #ff6f61);
+  z-index: -1;
+  transform: rotate(45deg);
+  transition: transform 0.4s ease;
+  opacity: 0.05;
+}
+
+.createpost:hover::before {
+  transform: rotate(0deg);
+  opacity: 0.1;
+}
+
+.createpost:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Form Label Styling with Page Load Animation */
+.form-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  animation: slideIn 0.8s ease-in-out;
+}
+
+.form-label:hover {
+  color: #ff6f61;
+}
+
+/* Form Control Styling with Page Load Animation */
+.form-control {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #b0bec5;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #ff6f61;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+}
+
+/* Button Styling with Page Load Animation */
+.btn-primary {
+  background-color: #ff6f61;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-transform: uppercase;
+  animation: grow 1s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #ff8e72;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(255, 111, 97, 0.4);
+}
+
+
+
+/* General Enhancements */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #f7f9fc, #e2e8f0);
+  margin: 0;
+  padding: 0;
+  animation: fadeInPage 0.6s ease-in-out;
+}
+
+@keyframes fadeInPage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Post Card Styling */
+.post-card {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Title Styling */
+.card-title {
+  padding: 20px;
+  font-weight: 900;
+  margin: 0;
+  font-family: "Poppins", serif;
+  font-size: 24px;
+  color: #2c3e50;
+  border-bottom: 1px solid #dddddd;
+}
+
+/* Card Text Styling */
+.card-text {
+  padding: 20px;
+  margin: 0;
+  font-family: "Poppins", serif;
+  color: #555555;
+  line-height: 1.6;
+}
+
+/* Hashtag Styling */
+.hashtag {
+  display: inline-block;
+  font-style: italic;
+  padding: 8px 14px;
+  margin: 6px;
+  background-color: #f0f0f0;
+  color: #555555;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.hashtag:hover {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+/* Like Card Styling */
+.likecard {
+  padding: 12px 20px;
+  font-family: "Poppins", serif;
+  margin: 10px 0;
+  font-size: 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.likecard:hover {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+.likecard-icon {
+  font-size: 22px;
+  color: #e74c3c;
+  margin-right: 10px;
+}
+
+.likecard-text {
+  flex: 1;
+  margin-left: 8px;
+}
+
+.likecard-text strong {
+  color: #2c3e50;
+}
+
+.likecard:hover .likecard-icon {
+  color: #ffffff;
+}
+
+/* Delete Button Styling */
+.deletebtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #888888;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.deletebtn:hover {
+  color: #e74c3c;
+  transform: scale(1.1);
+}
+
+.wlcmmsg {
+  text-align: center;
+  margin: 10%;
+  font-style: italic;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+/* Fetch button css */
+
+button {
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #03045e;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+}
+
+button::before {
+  left: -10px;
+  background: #240046;
+}
+
+button::after {
+  right: -10px;
+  background: #5a189a;
+}
+
+button:hover::before,
+button:hover::after {
+  width: 58%;
+}
+
+button:hover span {
+  color: #e0aaff;
+  transition: 0.3s;
+}
+
+button span {
+  color: #03045e;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+}
+
+.wlcmbtn {
+  text-align: center;
+}
+
+#page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  margin-top: 10%;
+  width: 290px;
+  height: 290px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#ring {
+  width: 190px;
+  height: 190px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+}
+
+#ring:nth-child(1) {
+  border-bottom: 8px solid rgb(240, 42, 230);
+  animation: rotate1 2s linear infinite;
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotateX(50deg) rotateZ(110deg);
+  }
+
+  to {
+    transform: rotateX(50deg) rotateZ(470deg);
+  }
+}
+
+#ring:nth-child(2) {
+  border-bottom: 8px solid rgb(240, 19, 67);
+  animation: rotate2 2s linear infinite;
+}
+
+@keyframes rotate2 {
+  from {
+    transform: rotateX(20deg) rotateY(50deg) rotateZ(20deg);
+  }
+
+  to {
+    transform: rotateX(20deg) rotateY(50deg) rotateZ(380deg);
+  }
+}
+
+#ring:nth-child(3) {
+  border-bottom: 8px solid rgb(3, 170, 170);
+  animation: rotate3 2s linear infinite;
+}
+
+@keyframes rotate3 {
+  from {
+    transform: rotateX(40deg) rotateY(130deg) rotateZ(450deg);
+  }
+
+  to {
+    transform: rotateX(40deg) rotateY(130deg) rotateZ(90deg);
+  }
+}
+
+#ring:nth-child(4) {
+  border-bottom: 8px solid rgb(207, 135, 1);
+  animation: rotate4 2s linear infinite;
+}
+
+@keyframes rotate4 {
+  from {
+    transform: rotateX(70deg) rotateZ(270deg);
+  }
+
+  to {
+    transform: rotateX(70deg) rotateZ(630deg);
+  }
+}
+
+/* App.css */
+
+.appcontainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  z-index: 1000;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  z-index: 900;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  z-index: 800;
+}
+
+
+

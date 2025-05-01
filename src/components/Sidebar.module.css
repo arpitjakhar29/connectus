@@ -1,0 +1,131 @@
+/* Sidebar Styles */
+.sidebar {
+  background: #000000; /* Black background */
+  color: #ffffff; /* White text color */
+  border-top-right-radius: 8px; /* Round top-right corner */
+  border-bottom-right-radius: 8px; /* Round bottom-right corner */
+  border-top-left-radius: 0; /* No rounding on top-left corner */
+  border-bottom-left-radius: 0; /* No rounding on bottom-left corner */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+  overflow: hidden;
+  height: 90vh;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  animation: slideIn 0.5s ease-in-out;
+  margin-top: 5px;
+}
+
+/* Animation for Sidebar */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Sidebar Links */
+.nav-link {
+  color: #ffffff; /* White text color */
+  text-decoration: none;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box; /* Include padding in total width */
+}
+
+.nav-link:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slightly white background on hover */
+  color: #f39c12; /* Gold color on hover */
+  transform: translateX(10px); /* Slide effect */
+}
+
+.active {
+  background-color: #444; /* Dark gray for active state */
+  color: #f39c12; /* Gold color on active */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transform: scale(1.05); /* Slightly enlarge */
+  padding: 12px 20px; /* Adjust padding for better alignment */
+}
+
+/* Navigation Items */
+.nav-item {
+  margin: 10px 0; /* Increased margin for spacing */
+}
+
+/* SVG Icons */
+.nav-link svg {
+  vertical-align: middle;
+  margin-right: 15px; /* Increased margin for spacing */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background: #000000; /* Black background for dropdown */
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Match sidebar shadow */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #ffffff; /* White text color */
+  padding: 12px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Slightly white background on hover */
+}
+
+/* Profile Image */
+.sidebar img {
+  transition: transform 0.3s ease;
+}
+
+.sidebar img:hover {
+  transform: scale(1.1);
+}
+
+/* Dropdown Toggle */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  color: #ffffff; /* White text color */
+  transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  color: #f39c12; /* Gold color on hover */
+}
+
+/* Hamburger Button */
+.hamburger-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: none;
+  border: none;
+  color: #ffffff; /* White color */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hamburger-button:hover {
+  color: #f39c12; /* Gold color on hover */
+}

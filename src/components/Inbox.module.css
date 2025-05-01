@@ -1,0 +1,145 @@
+/* Importing Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;900&display=swap');
+
+/* Container for inbox messages */
+.inboxContainer {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #ffffff; /* Bright, clean background */
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Softer shadow for a light theme */
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Fade-in animation for the container */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading style */
+.heading {
+  text-align: center;
+  height: 60px;
+  margin-bottom: 30px;
+  font-size: 2.8em; /* Prominent font size */
+  color: #ff4081; /* Vibrant pink color */
+  font-family: "Poppins", sans-serif; /* Modern, bold font */
+  letter-spacing: 1.2px;
+  text-transform: uppercase; /* Strong uppercase style */
+  background: linear-gradient(90deg, #ff4081, #ff80ab); /* Bright gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  animation: headingAnimation 1.5s ease-in-out;
+}
+
+/* Heading animation */
+@keyframes headingAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* List of messages */
+.messageList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual message item */
+.messageItem {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #f9f9f9; /* Light gray background */
+  border-radius: 15px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), -4px -4px 12px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 0.7s ease-out;
+}
+
+/* Slide-in animation for message items */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effect for message items */
+.messageItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.7);
+  background: #f0f0f0; /* Slightly darker background on hover */
+}
+
+/* Profile image */
+.profileImage {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid #ff4081; /* Vibrant pink border */
+  transition: border-color 0.3s ease;
+}
+
+/* Hover effect for profile image border */
+.messageItem:hover .profileImage {
+  border-color: #ff80ab; /* Lighter pink on hover */
+}
+
+/* Message content */
+.messageContent {
+  flex-grow: 1;
+}
+
+/* Header of message */
+.messageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Name of the sender */
+.messageName {
+  font-weight: 700;
+  color: #333333; /* Darker text color for contrast */
+  font-family: "Poppins", sans-serif; /* Modern font */
+  font-size: 1.3em; /* Slightly larger font size */
+}
+
+/* Time of the message */
+.messageTime {
+  font-size: 0.9em;
+  color: #ff4081; /* Pink color for consistency */
+  font-family: "Poppins", sans-serif;
+}
+
+/* Last message text */
+.lastMessage {
+  margin: 0;
+  color: #666666; /* Softer gray for last message */
+  font-style: italic;
+  font-family: "Roboto", sans-serif; /* Clean, readable font */
+}
